@@ -1,0 +1,1029 @@
+/* =========================================================
+   EMPLOYEE MANAGEMENT SYSTEM
+   SIMPLE • CLEAN • PROFESSIONAL
+   ========================================================= */
+
+
+/* =========================================================
+   COLORS
+   ========================================================= */
+
+:root {
+    --background: #f3f6fa;
+    --card: #ffffff;
+
+    --dark: #26364a;
+    --dark-hover: #344860;
+
+    --primary: #5b7c99;
+    --primary-hover: #496b88;
+
+    --text: #26364a;
+    --muted: #718096;
+
+    --border: #dce4ec;
+
+    --input: #ffffff;
+
+    --shadow: 0 6px 20px rgba(38, 54, 74, 0.08);
+}
+
+
+/* =========================================================
+   DARK THEME
+   ========================================================= */
+
+[data-theme="dark"] {
+    --background: #18222e;
+    --card: #22303e;
+
+    --dark: #111a24;
+    --dark-hover: #2d3c4d;
+
+    --primary: #7d9bb5;
+    --primary-hover: #91acc3;
+
+    --text: #edf2f7;
+    --muted: #b4c0cc;
+
+    --border: #3a4a5b;
+
+    --input: #293847;
+
+    --shadow: 0 6px 20px rgba(0, 0, 0, 0.20);
+}
+
+
+/* =========================================================
+   BASIC
+   ========================================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+
+    font-family:
+        Arial,
+        "Segoe UI",
+        sans-serif;
+
+    background: var(--background) !important;
+
+    color: var(--text) !important;
+
+    min-height: 100vh;
+
+    transition:
+        background 0.25s ease,
+        color 0.25s ease;
+}
+
+a {
+    text-decoration: none;
+}
+
+button,
+input,
+textarea,
+select {
+    font-family: inherit;
+}
+
+
+/* =========================================================
+   NAVBAR
+   ========================================================= */
+
+.navbar,
+nav {
+    width: 100%;
+
+    min-height: 72px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding: 0 55px;
+
+    background: var(--dark) !important;
+
+    box-shadow:
+        0 3px 12px rgba(38, 54, 74, 0.12);
+
+    position: relative;
+
+    z-index: 10;
+}
+
+
+/* =========================================================
+   LOGO
+   ========================================================= */
+
+.logo {
+    color: #ffffff !important;
+
+    font-size: 22px;
+
+    font-weight: 700;
+
+    white-space: nowrap;
+}
+
+
+/* =========================================================
+   NAVIGATION
+   ========================================================= */
+
+.nav-links {
+    display: flex;
+
+    align-items: center;
+
+    gap: 6px;
+
+    list-style: none;
+}
+
+.nav-links a {
+    color: #e8edf2 !important;
+
+    font-size: 15px;
+
+    font-weight: 500;
+
+    padding: 10px 13px;
+
+    border-radius: 5px;
+
+    transition: 0.2s ease;
+}
+
+.nav-links a:hover {
+    color: #ffffff !important;
+
+    background: var(--dark-hover);
+}
+
+
+/* =========================================================
+   COMMON BUTTON
+   ========================================================= */
+
+.login-btn,
+.register-btn,
+.logout-btn {
+    border: none;
+
+    padding: 9px 16px;
+
+    border-radius: 6px;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    transition: 0.2s ease;
+}
+
+
+/* All navbar action buttons use the same pleasant color */
+
+.login-btn,
+.register-btn,
+.logout-btn {
+    background: var(--primary);
+
+    color: #ffffff !important;
+}
+
+.login-btn:hover,
+.register-btn:hover,
+.logout-btn:hover {
+    background: var(--primary-hover);
+
+    transform: translateY(-1px);
+}
+
+
+/* =========================================================
+   THEME BUTTON
+   ========================================================= */
+
+.theme-btn {
+    background: #43566b !important;
+
+    color: #ffffff !important;
+
+    border: 1px solid #53677c;
+
+    padding: 8px 14px;
+
+    border-radius: 6px;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: 0.2s ease;
+}
+
+.theme-btn:hover {
+    background: #52677c !important;
+}
+
+
+/* Login page theme button */
+
+.theme-toggle {
+    position: fixed;
+
+    top: 18px;
+
+    right: 20px;
+
+    width: 44px;
+
+    height: 44px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background: #43566b !important;
+
+    color: #ffffff !important;
+
+    border: 1px solid #53677c;
+
+    border-radius: 50%;
+
+    cursor: pointer;
+
+    z-index: 100;
+}
+
+.theme-toggle:hover {
+    background: #52677c !important;
+}
+
+
+/* =========================================================
+   COMMON CARDS
+   ========================================================= */
+
+.container,
+.login-card,
+.register-container,
+.table-container,
+.card,
+.feature-box,
+.hero {
+    background: var(--card) !important;
+
+    color: var(--text) !important;
+
+    border: 1px solid var(--border);
+
+    box-shadow: var(--shadow);
+
+    transition:
+        background 0.25s ease,
+        color 0.25s ease,
+        border 0.25s ease;
+}
+
+
+/* =========================================================
+   TEXT
+   ========================================================= */
+
+h1,
+h2,
+h3 {
+    color: var(--text) !important;
+}
+
+p,
+label {
+    color: var(--text) !important;
+}
+
+
+/* =========================================================
+   FORM CONTAINER
+   ========================================================= */
+
+.container {
+    width: 95%;
+    max-width: 1400px;
+    margin: 25px auto;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+
+/* =========================================================
+   FORM GROUP
+   ========================================================= */
+
+.form-group {
+    margin-bottom: 18px;
+}
+
+.form-group label {
+    display: block;
+
+    margin-bottom: 7px;
+
+    font-size: 14px;
+
+    font-weight: 600;
+}
+
+
+/* =========================================================
+   INPUTS
+   ========================================================= */
+
+input,
+textarea,
+select {
+    width: 100%;
+
+    padding: 12px;
+
+    background: var(--input) !important;
+
+    color: var(--text) !important;
+
+    border: 1px solid var(--border);
+
+    border-radius: 6px;
+
+    font-size: 14px;
+
+    outline: none;
+
+    transition: 0.2s ease;
+}
+
+input::placeholder,
+textarea::placeholder {
+    color: var(--muted);
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+    border-color: var(--primary);
+
+    box-shadow:
+        0 0 0 3px rgba(91, 124, 153, 0.12);
+}
+
+
+/* =========================================================
+   FORM ROW
+   ========================================================= */
+
+.row {
+    display: flex;
+
+    gap: 20px;
+}
+
+.row > * {
+    flex: 1;
+}
+
+
+/* =========================================================
+   BUTTON GROUP
+   ========================================================= */
+
+.buttons,
+.button-group {
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    margin-top: 20px;
+}
+
+
+/* =========================================================
+   MAIN BUTTONS
+   ========================================================= */
+
+.add-btn,
+.update-btn,
+.primary-btn,
+.search-btn,
+.btn {
+    background: var(--primary);
+
+    color: #ffffff !important;
+
+    border: none;
+
+    padding: 11px 20px;
+
+    border-radius: 6px;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: 0.2s ease;
+}
+
+.add-btn:hover,
+.update-btn:hover,
+.primary-btn:hover,
+.search-btn:hover,
+.btn:hover {
+    background: var(--primary-hover);
+
+    transform: translateY(-1px);
+
+    box-shadow:
+        0 4px 10px rgba(91, 124, 153, 0.20);
+}
+
+
+/* =========================================================
+   RESET BUTTON
+   ========================================================= */
+
+.reset-btn {
+    background: transparent;
+
+    color: var(--text) !important;
+
+    border: 1px solid var(--border);
+
+    padding: 11px 20px;
+
+    border-radius: 6px;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: 0.2s ease;
+}
+
+.reset-btn:hover {
+    border-color: var(--primary);
+
+    color: var(--primary) !important;
+}
+
+
+/* =========================================================
+   BACK BUTTON
+   ========================================================= */
+
+.back-btn {
+    display: inline-block;
+
+    margin-top: 12px;
+
+    padding: 9px 15px;
+
+    border: 1px solid var(--border);
+
+    border-radius: 6px;
+
+    background: transparent;
+
+    color: var(--text) !important;
+
+    font-size: 14px;
+
+    transition: 0.2s ease;
+}
+
+.back-btn:hover {
+    border-color: var(--primary);
+
+    color: var(--primary) !important;
+}
+
+
+/* =========================================================
+   LOGIN
+   ========================================================= */
+
+.login-container {
+    min-height: calc(100vh - 72px);
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 30px 20px;
+}
+
+.login-card {
+    width: 100%;
+
+    max-width: 420px;
+
+    padding: 40px;
+
+    border-radius: 12px;
+}
+
+.login-card h2 {
+    text-align: center;
+
+    font-size: 28px;
+
+    margin-bottom: 8px;
+}
+
+
+/* =========================================================
+   REGISTER
+   ========================================================= */
+
+.register-container {
+    width: 450px;
+
+    max-width: 90%;
+
+    margin: 50px auto;
+
+    padding: 35px;
+
+    border-radius: 10px;
+}
+
+.register-container h2 {
+    text-align: center;
+
+    font-size: 28px;
+
+    margin-bottom: 25px;
+}
+
+
+/* =========================================================
+   LOGIN TEXT
+   ========================================================= */
+
+.login-text {
+    text-align: center;
+
+    margin-top: 18px;
+
+    color: var(--muted) !important;
+
+    font-size: 14px;
+}
+
+.login-text a,
+.register-link {
+    color: var(--primary) !important;
+
+    font-weight: 600;
+}
+
+.login-text a:hover,
+.register-link:hover {
+    color: var(--primary-hover) !important;
+
+    text-decoration: underline;
+}
+
+
+/* =========================================================
+   INDEX PAGE
+   ========================================================= */
+
+body:has(.card) {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    min-height: 100vh;
+
+    padding: 20px;
+}
+
+.card {
+    width: 380px;
+
+    max-width: 95%;
+
+    padding: 40px;
+
+    border-radius: 12px;
+
+    text-align: center;
+}
+
+.card h1 {
+    font-size: 30px;
+
+    margin-bottom: 12px;
+}
+
+.card p {
+    color: var(--muted) !important;
+
+    margin-bottom: 25px;
+}
+
+.card .btn {
+    display: block;
+
+    width: 100%;
+
+    margin-bottom: 12px;
+}
+
+
+/* =========================================================
+   HOME HERO
+   ========================================================= */
+
+.hero {
+    width: 75%;
+
+    max-width: 1180px;
+
+    margin: 55px auto 40px;
+
+    padding: 65px 45px;
+
+    border-radius: 15px;
+
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 42px;
+
+    line-height: 1.15;
+
+    margin-bottom: 18px;
+}
+
+.hero p {
+    color: var(--muted) !important;
+
+    font-size: 18px;
+
+    margin-bottom: 30px;
+}
+
+.hero-buttons {
+    display: flex;
+
+    justify-content: center;
+
+    gap: 12px;
+}
+
+
+/* =========================================================
+   SECONDARY BUTTON
+   ========================================================= */
+
+.secondary-btn {
+    display: inline-block;
+
+    padding: 11px 20px;
+
+    border: 1px solid var(--border);
+
+    border-radius: 6px;
+
+    background: transparent;
+
+    color: var(--text) !important;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    transition: 0.2s ease;
+}
+
+.secondary-btn:hover {
+    border-color: var(--primary);
+
+    color: var(--primary) !important;
+}
+
+
+/* =========================================================
+   FEATURES
+   ========================================================= */
+
+.features {
+    width: 75%;
+
+    max-width: 1180px;
+
+    margin: 40px auto;
+}
+
+.features h2 {
+    text-align: center;
+
+    font-size: 30px;
+
+    margin-bottom: 30px;
+}
+
+.feature-container {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 22px;
+}
+
+.feature-box {
+    padding: 30px;
+
+    border-radius: 10px;
+
+    text-align: center;
+
+    transition: 0.2s ease;
+}
+
+.feature-box:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 10px 25px rgba(38, 54, 74, 0.10);
+}
+
+.feature-box h3 {
+    font-size: 18px;
+
+    margin-bottom: 10px;
+}
+
+.feature-box p {
+    color: var(--muted) !important;
+
+    font-size: 14px;
+
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   SEARCH
+   ========================================================= */
+
+.search-form {
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    margin-bottom: 20px;
+}
+
+.search-form input {
+    flex: 1;
+}
+
+
+/* =========================================================
+   TABLE
+   ========================================================= */
+
+.table-container{
+    width:100%;
+    overflow:hidden;
+}
+
+table{
+    width:100%;
+    table-layout:fixed;
+    border-collapse:collapse;
+}
+
+th,td{
+    padding:8px 6px;
+    font-size:12px;
+    text-align:center;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    white-space:nowrap;
+}
+
+th:nth-child(1),td:nth-child(1){width:35px;}
+th:nth-child(2),td:nth-child(2){width:80px;}
+th:nth-child(3),td:nth-child(3){width:140px;}
+th:nth-child(4),td:nth-child(4){width:95px;}
+th:nth-child(5),td:nth-child(5){width:80px;}
+th:nth-child(6),td:nth-child(6){width:80px;}
+th:nth-child(7),td:nth-child(7){width:90px;}
+th:nth-child(8),td:nth-child(8){width:90px;}
+th:nth-child(9),td:nth-child(9){width:70px;}   /* Edit */
+th:nth-child(10),td:nth-child(10){width:85px;} /* Delete */
+
+
+/* =========================================================
+   EDIT / DELETE
+   Same single accent color
+   ========================================================= */
+
+.edit-btn,
+.delete-btn{
+    padding:6px 8px;
+    font-size:11px;
+    white-space:nowrap;
+}
+
+.edit-btn:hover,
+.delete-btn:hover {
+    background: var(--primary-hover);
+}
+
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+.footer {
+    margin-top: 60px;
+
+    padding: 25px;
+
+    background: var(--dark);
+
+    text-align: center;
+}
+
+.footer p {
+    color: #d5dde5 !important;
+
+    font-size: 13px;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+    .navbar,
+    nav {
+        padding: 0 25px;
+    }
+
+    .nav-links a {
+        padding: 8px 9px;
+
+        font-size: 13px;
+    }
+
+    .hero,
+    .features,
+    .container {
+        width: 90%;
+    }
+
+    .feature-container {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+
+@media (max-width: 700px) {
+
+    .navbar,
+    nav {
+        flex-direction: column;
+
+        gap: 12px;
+
+        padding: 18px 15px;
+    }
+
+    .nav-links {
+        flex-wrap: wrap;
+
+        justify-content: center;
+    }
+
+    .row {
+        flex-direction: column;
+
+        gap: 0;
+    }
+
+    .container {
+        width: 94%;
+
+        padding: 25px 20px;
+    }
+
+    .login-card {
+        padding: 30px 22px;
+    }
+
+    .register-container {
+        width: 94%;
+
+        padding: 28px 22px;
+    }
+
+    .hero {
+        width: 94%;
+
+        padding: 45px 20px;
+    }
+
+    .hero h1 {
+        font-size: 32px;
+    }
+
+    .hero p {
+        font-size: 16px;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+
+        align-items: center;
+    }
+
+    .feature-container {
+        grid-template-columns: 1fr;
+    }
+
+    .features {
+        width: 94%;
+    }
+
+    .search-form {
+        flex-direction: column;
+
+        align-items: stretch;
+    }
+
+    .search-form button {
+        width: 100%;
+    }
+}
+
+
+@media (max-width: 450px) {
+
+    .logo {
+        font-size: 20px;
+    }
+
+    .nav-links a {
+        font-size: 12px;
+
+        padding: 7px 8px;
+    }
+
+    .hero h1 {
+        font-size: 28px;
+    }
+
+    .card {
+        padding: 30px 22px;
+    }
+}

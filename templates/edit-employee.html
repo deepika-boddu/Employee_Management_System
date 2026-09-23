@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="/static/theme.css">
+    <script src="/static/theme.js" defer></script>
+
+    <title>Edit Employee</title>
+
+    
+</head>
+
+<body>
+
+
+    <!-- ================= EDIT FORM ================= -->
+
+    <div class="container">
+
+        <h1>
+            Edit Employee
+        </h1>
+
+
+        <form
+            action="/edit-employee/{{ employee['id'] }}"
+            method="POST">
+
+
+            <!-- EMPLOYEE ID -->
+
+            <label>
+                Employee ID
+            </label>
+
+            <input
+                type="text"
+                value="{{ employee['id'] }}"
+                readonly>
+
+
+            <!-- NAME -->
+
+            <label>
+                Employee Name
+            </label>
+
+            <input
+                type="text"
+                name="name"
+                value="{{ employee['name'] }}"
+                required>
+
+
+            <!-- EMAIL -->
+
+            <label>
+                Email
+            </label>
+
+            <input
+                type="email"
+                name="email"
+                value="{{ employee['email'] }}"
+                required>
+
+
+            <!-- PHONE -->
+
+            <label>
+                Phone
+            </label>
+
+            <input
+                type="text"
+                name="phone"
+                value="{{ employee['phone'] }}"
+                required>
+
+
+            <!-- DEPARTMENT -->
+
+            <label>
+                Department
+            </label>
+
+            <input
+                type="text"
+                name="department"
+                value="{{ employee['department'] }}"
+                required>
+
+
+            <!-- SALARY -->
+
+            <label>
+                Salary
+            </label>
+
+            <input
+                type="number"
+                name="salary"
+                value="{{ employee['salary'] }}"
+                step="0.01"
+                required>
+
+
+            <!-- JOINING DATE -->
+
+            <label>
+                Joining Date
+            </label>
+
+            <input
+                type="date"
+                name="joining_date"
+                value="{{ employee['joining_date'] }}"
+                required>
+
+
+            <!-- ADDRESS -->
+
+            <label>
+                Address
+            </label>
+
+            <textarea
+                name="address"
+                required>{{ employee['address'] }}</textarea>
+
+
+            <!-- UPDATE -->
+
+            <button
+                type="submit"
+                class="update-btn">
+
+                Update Employee
+
+            </button>
+            <button
+    type="button"
+    id="themeBtn"
+    class="theme-btn"
+    onclick="toggleTheme()">
+    🌙 Dark
+</button>
+            
+        </form>
+
+
+        <a href="/employees"
+           class="back-btn">
+
+            ← Back to Employees
+
+        </a>
+
+    </div>
+
+
+</body>
+
+</html>

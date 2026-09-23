@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="/static/theme.css">
+    <script src="/static/theme.js" defer></script>
+
+    <title>Employees</title>
+
+    
+
+</head>
+
+<body>
+
+
+    
+    <!-- ================= EMPLOYEES ================= -->
+
+    <div class="container">
+
+        <h1>
+            Employee Information
+        </h1>
+
+        <form action="/employees" method="GET" class="search-form">
+
+    <input
+        type="text"
+        name="search"
+        placeholder="Search by name, email, phone or department"
+        required>
+
+    <button type="submit" class="search-btn">
+        🔍 Search
+    </button>
+
+    <button id="themeBtn"
+                       class="theme-btn"
+                       onclick="toggleTheme()">
+                     🌙 dark
+            </button>
+
+</form>
+
+
+        <a href="/add-employee"
+           class="add-btn">
+
+            + Add Employee
+
+        </a>
+
+
+        <div class="table-container">
+
+
+            {% if employees %}
+
+
+            <table>
+
+                <thead>
+
+                    <tr>
+
+                        <th>ID</th>
+
+                        <th>Name</th>
+
+                        <th>Email</th>
+
+                        <th>Phone</th>
+
+                        <th>Department</th>
+
+                        <th>Salary</th>
+
+                        <th>Joining Date</th>
+
+                        <th>Address</th>
+
+                        <th>Actions</th>
+
+                    </tr>
+
+                </thead>
+
+
+                <tbody>
+
+
+                    {% for employee in employees %}
+
+
+                    <tr>
+
+                        <td>
+                            {{ employee['id'] }}
+                        </td>
+
+                        <td>
+                            {{ employee['name'] }}
+                        </td>
+
+                        <td>
+                            {{ employee['email'] }}
+                        </td>
+
+                        <td>
+                            {{ employee['phone'] }}
+                        </td>
+
+                        <td>
+                            {{ employee['department'] }}
+                        </td>
+
+                        <td>
+                            ₹{{ employee['salary'] }}
+                        </td>
+
+                        <td>
+                            {{ employee['joining_date'] }}
+                        </td>
+
+                        <td>
+                            {{ employee['address'] }}
+                        </td>
+
+                        <td>
+
+                            <!-- EDIT -->
+
+                            <a href="/edit-employee/{{ employee['id'] }}"
+                               class="edit-btn">
+
+                                Edit
+
+                            </a>
+
+
+
+                            <!-- DELETE -->
+
+                            <a href="/delete-employee/{{ employee['id'] }}"
+                               class="delete-btn"
+                               onclick="return confirm('Are you sure you want to delete this employee?');">
+
+                                Delete
+
+                            </a>
+
+                        </td>
+
+                    </tr>
+
+
+                    {% endfor %}
+
+
+                </tbody>
+
+            </table>
+
+
+            {% else %}
+
+
+            <div class="no-data">
+
+                No employees found.
+
+            </div>
+
+
+            {% endif %}
+
+
+        </div>
+
+    </div>
+    <a href="/home"
+           class="back-btn">
+
+            ← Back to home
+
+        </a>
+
+
+
+</body>
+
+</html>

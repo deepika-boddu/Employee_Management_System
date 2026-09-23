@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="/static/theme.css">
+    <script src="/static/theme.js" defer></script>
+    
+    <title>Employee Management System</title>
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================
+         NAVBAR
+    ========================= -->
+
+    <nav class="navbar">
+
+        <div class="logo">
+            Employee Management System
+        </div>
+
+        <ul class="nav-links">
+
+            <li>
+                <a href="/home">Home</a>
+            </li>
+
+            <li>
+                <a href="/employees">Employees</a>
+            </li>
+
+            <li>
+                <a href="/add-employee">Add Employee</a>
+            </li>
+
+            <li>
+                <a href="/login" class="login-btn">Login</a>
+            </li>
+
+            <li>
+                <a href="/register" class="register-btn">Register</a>
+            </li>
+
+            <li>
+                <a href="/logout" class="logout-btn">Logout</a>
+            </li>
+            <li>
+                <button id="themeBtn"
+                        class="theme-btn"
+                        onclick="toggleTheme()">
+                     🌙 dark
+                </button>
+            </li>
+
+        </ul>
+
+    </nav>
+
+
+    <!-- =========================
+         HERO
+    ========================= -->
+
+    <section class="hero">
+
+        <h1>
+            Welcome to Employee Management System
+        </h1>
+
+        <p>
+            Manage your employees easily and efficiently.
+        </p>
+
+        <div class="hero-buttons">
+
+            <a href="/employees" class="btn primary-btn">
+                View Employees
+            </a>
+
+            <a href="/add-employee" class="btn secondary-btn">
+                Add Employee
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         FEATURES
+    ========================= -->
+
+    <section class="features">
+
+        <h2>
+            Employee Management
+        </h2>
+
+        <div class="feature-container">
+
+
+            <div class="feature-box">
+
+                <h3>
+                    Employee Database
+                </h3>
+
+                <p>
+                    View all registered employees
+                    and their information in one place.
+                </p>
+
+            </div>
+
+
+            <div class="feature-box">
+
+                <h3>
+                    Add Employees
+                </h3>
+
+                <p>
+                    Easily add new employees with
+                    their name, email, phone, department,
+                    salary and joining date.
+                </p>
+
+            </div>
+
+
+            <div class="feature-box">
+
+                <h3>
+                    Search
+                </h3>
+
+                <p>
+                    Quickly search for employees
+                    using their name, email, phone
+                    or department.
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         FOOTER
+    ========================= -->
+
+    <footer class="footer">
+
+        <p>
+            Employee Management System
+        </p>
+
+    </footer>
+
+
+</body>
+
+</html>
